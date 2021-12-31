@@ -15,9 +15,9 @@ sys.path.insert(0, project_root)
 
 import env_lab
 
-DNAC_URL = env_lab.DNA_CENTER["host"]
-DNAC_USER = env_lab.DNA_CENTER["username"]
-DNAC_PASS = env_lab.DNA_CENTER["password"]
+DNAC_URL = "sandboxdnac.cisco.com"
+DNAC_USER = "devnetuser"
+DNAC_PASS = "Cisco123!"
 
 """   
     This code snippet will run execute operational commands across your entire network using Cisco DNA Center 

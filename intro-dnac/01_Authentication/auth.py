@@ -14,9 +14,9 @@ sys.path.insert(0, project_root)
 
 import env_lab
 
-DNAC_URL = env_lab.DNA_CENTER["host"]
-DNAC_USER = env_lab.DNA_CENTER["username"]
-DNAC_PASS = env_lab.DNA_CENTER["password"]
+DNAC_URL = "sandboxdnac.cisco.com"
+DNAC_USER = "devnetuser"
+DNAC_PASS = "Cisco123!"
 
 def get_auth_token():
     """
@@ -24,7 +24,9 @@ def get_auth_token():
     """
     url = 'https://{}/dna/system/api/v1/auth/token'.format(DNAC_URL)                      # Endpoint URL
     hdr = {'content-type' : 'application/json'}                                           # Define request header
+    
     resp = requests.post(url, auth=HTTPBasicAuth(DNAC_USER, DNAC_PASS), headers=hdr)      # Make the POST Request
+    print(resp)
     token = resp.json()['Token']                                                          # Retrieve the Token
     print("Token Retrieved: {}".format(token))                                            # Print out the Token
     return token    # Create a return statement to send the token back for later use

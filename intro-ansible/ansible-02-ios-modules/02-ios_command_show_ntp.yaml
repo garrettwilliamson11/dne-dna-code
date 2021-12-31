@@ -6,13 +6,12 @@
 
   tasks:
 
-  - name: run show ntp associations
+  - name: run show ntp config
     ios_command:
-      commands: show ntp associations
+      commands: show ntp config
     register: myntp
 
-  - name: display value of "myntp" variable
-    debug:
-      var: myntp["stdout_lines"][0]
+  - debug: 
+      var: myntp.stdout_lines[0]
 
 

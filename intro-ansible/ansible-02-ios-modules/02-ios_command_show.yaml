@@ -21,7 +21,7 @@
 
   - name: display value of "myint" variable
     debug:
-      var: myint["stdout_lines"][0]
+      var: myint["stdout_lines"]
 
 ## Lab 1
   - name: run show users
